@@ -1,0 +1,16 @@
+<p>
+	todo-list-view works!
+</p>
+<ul>
+	<li *ngFor="let item of todolist">
+		{{ item }}
+		<button (click)="remover(item)">Remover</button>
+	</li>
+
+	<input [(ngModel)]="itemadd"
+		type="text"
+		name="name"
+		placeholder="Digite">
+	<button (click)="addItem(itemadd)">Adicionar</button>
+
+</ul>
