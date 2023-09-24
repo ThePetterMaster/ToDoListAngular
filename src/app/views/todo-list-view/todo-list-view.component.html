@@ -1,4 +1,4 @@
-<div class="container-fluid ">
+<div class="container-fluid mt-2">
 	<div class="container ">
 		<div class="card shadow w-100">
 			<div class="card bg-danger">
@@ -16,47 +16,88 @@
 						class="btn btn-outline-success">
 						Adicionar
 					</button>
-
-
-
-
-					<!-- <input type="text" class="form-control" placeholder="Enter task " name="task" [(ngModel)]="itemadd">
-					<button class="btn btn-outline-success" type="button" (click)="addItem(itemadd)">+</button> -->
 				</div>
 			</div>
 
-
-
-
 			<div class="card-body  bg-white ">
-				<ul>
-					<li *ngFor="let item of todolist">
-						{{ item }}
-						<button class="btn btn-outline-primary col me-2" type="button"  >e</button>
-						<button (click)="remover(item)"
-							class="btn btn-outline-danger">
-							X
-						</button>
-					</li>
+				<div *ngFor="let item of todolist"
+					class="p-2 m-3 shadow "
+					id="tasks">
+					<div class="d-flex bd-highlight mb-1">
+						<div class="me-auto p-2 bd-highlight">{{ item }}</div>
+						<div class="p-2 bd-highlight">
+							<button class="btn btn-outline-primary "
+								(click)="itemAntigo=item;itemNovo=item"
+								type="button"
+								data-bs-toggle="modal"
+								data-bs-target="#myModal">
+								Editar
+							</button>
+						</div>
+						<div class="p-2 bd-highlight">
+							<button (click)="remover(item)"
+								class="btn btn-outline-danger">
+								Fechar
+							</button>
+						</div>
+					</div>
 
-
-
-
-
-
-
-
-				</ul>
-
-
-
-
-
+				</div>
 			</div>
 		</div>
 	</div>
 
 
 
+
+
+	<!-- The Modal -->
+	<div class="modal fade"
+		id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Edição de elemento</h4>
+					<button type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"></button>
+				</div>
+
+
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<input type="text"
+						name="name"
+						placeholder="Digite"
+						[(ngModel)]="itemNovo"
+						class="form-control">
+				</div>
+
+
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button"
+						(click)="editar()"
+						class="btn btn-primary"
+						data-bs-dismiss="modal">
+						Editar
+					</button>
+					<button type="button"
+						class="btn btn-danger"
+						data-bs-dismiss="modal">
+						Close
+					</button>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
 
 </div>

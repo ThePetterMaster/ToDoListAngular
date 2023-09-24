@@ -7,10 +7,13 @@ import { TodoListViewComponent } from './views/todo-list-view/todo-list-view.com
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListViewComponent
+    TodoListViewComponent,
+
   ],
   imports: [
     BrowserModule,
